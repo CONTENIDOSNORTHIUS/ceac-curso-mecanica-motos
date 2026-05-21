@@ -1,0 +1,66 @@
+/* ============================================================
+   CEAC · Recepcionista de Hotel — estilos personalizados
+   Complemento a TailwindCSS (Play CDN cargado desde index.html)
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animación on-scroll para elementos .reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respeto a usuarios con motion-reduced */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Accordion: rotación del icono cuando está abierto */
+.acc-btn[aria-expanded="true"] .acc-icon {
+  transform: rotate(180deg);
+}
+
+/* Focus visible accesible */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #D4E157;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Mejora del hero en móvil */
+@media (max-width: 768px) {
+  #hero {
+    min-height: 540px;
+  }
+}
+
+/* Scrollbar discreta en navegadores webkit */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #f5f5f5; }
+::-webkit-scrollbar-thumb { background: #1A237E; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: #1E2A8C; }

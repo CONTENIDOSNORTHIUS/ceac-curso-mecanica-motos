@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1A237E" />
+
+  <!-- SEO -->
+  <title>Curso de Recepcionista de Hotel | CEAC</title>
+  <meta name="description" content="Fórmate como Recepcionista de Hotel a tu ritmo con CEAC. Doble titulación CEAC + Nebrija, prácticas garantizadas, bolsa de empleo con Randstad y 510 horas lectivas." />
+  <meta name="keywords" content="curso recepcionista hotel, CEAC, formación turismo, hotelería, recepción hotel, prácticas hotel" />
+  <meta name="author" content="CEAC" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Curso de Recepcionista de Hotel | CEAC" />
+  <meta property="og:description" content="Fórmate como Recepcionista de Hotel a tu ritmo. Doble titulación, prácticas garantizadas y bolsa de empleo." />
+  <meta property="og:image" content="https://placehold.co/1200x630/1A237E/FFFFFF?text=Curso+Recepcionista+CEAC" />
+  <meta property="og:url" content="https://ceac-recepcionista.vercel.app" />
+  <meta property="og:locale" content="es_ES" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Curso de Recepcionista de Hotel | CEAC" />
+  <meta name="twitter:description" content="Fórmate como Recepcionista de Hotel a tu ritmo con CEAC." />
+  <meta name="twitter:image" content="https://placehold.co/1200x630/1A237E/FFFFFF?text=Curso+Recepcionista+CEAC" />
+
+  <!-- Favicon (placeholder) -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- TailwindCSS (Play CDN para simplicidad) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lime: {
+              ceac: '#D4E157',
+              ceacDark: '#C5E063',
+            },
+            navy: {
+              ceac: '#1A237E',
+              ceacDark: '#1E2A8C',
+            },
+            blueMid: '#3F51B5',
+            yellowSoft: '#FFF9C4',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="font-body text-[#333] bg-white antialiased">
+
+  <!-- ==================== NAV STICKY ==================== -->
+  <header id="nav" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur shadow-sm transition-all">
+    <nav class="max-w-7xl mx-auto px-4 lg:px-8 py-3 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-2" aria-label="CEAC inicio">
+        <!-- Logo CEAC placeholder -->
+        <img src="https://placehold.co/120x40/1A237E/FFFFFF?text=CEAC" alt="Logo CEAC" class="h-9 w-auto" />
+      </a>
+
+      <!-- Desktop menu -->
+      <ul class="hidden lg:flex items-center gap-6 text-sm font-medium">
+        <li><a href="#quienes-somos" class="hover:text-navy-ceac transition-colors">Quiénes somos</a></li>
+        <li><a href="#por-que" class="hover:text-navy-ceac transition-colors">Por qué hacerlo</a></li>
+        <li><a href="#objetivos" class="hover:text-navy-ceac transition-colors">Objetivos</a></li>
+        <li><a href="#temario" class="hover:text-navy-ceac transition-colors">Temario</a></li>
+        <li><a href="#metodologia" class="hover:text-navy-ceac transition-colors">Metodología</a></li>
+        <li><a href="#equipo" class="hover:text-navy-ceac transition-colors">Equipo docente</a></li>
+        <li><a href="#sobre-ceac" class="hover:text-navy-ceac transition-colors">Sobre CEAC</a></li>
+      </ul>
+
+      <a href="#hero" class="hidden lg:inline-flex bg-navy-ceac text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-navy-ceacDark transition-colors">
+        Solicitar información
+      </a>
+
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="lg:hidden p-2 rounded-md hover:bg-gray-100" aria-label="Abrir menú" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="lg:hidden hidden border-t border-gray-100 bg-white">
+      <ul class="px-4 py-4 space-y-3 text-sm font-medium">
+        <li><a href="#quienes-somos" class="block py-1">Quiénes somos</a></li>
+        <li><a href="#por-que" class="block py-1">Por qué hacerlo</a></li>
+        <li><a href="#objetivos" class="block py-1">Objetivos</a></li>
+        <li><a href="#temario" class="block py-1">Temario</a></li>
+        <li><a href="#metodologia" class="block py-1">Metodología</a></li>
+        <li><a href="#equipo" class="block py-1">Equipo docente</a></li>
+        <li><a href="#sobre-ceac" class="block py-1">Sobre CEAC</a></li>
+        <li><a href="#hero" class="inline-flex mt-2 bg-navy-ceac text-white px-5 py-2.5 rounded-full font-semibold">Solicitar información</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="pt-16 lg:pt-20">
+
+    <!-- ==================== 1. HERO ==================== -->
+    <section id="hero" class="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
+      <!-- Imagen de fondo placeholder: recepcionista de hotel -->
+      <div class="absolute inset-0 z-0">
+        <img src="https://placehold.co/1920x1080/1A237E/FFFFFF?text=Recepcionista+de+Hotel"
+             alt="Recepcionista de hotel atendiendo a clientes en el mostrador"
+             class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-r from-navy-ceac/85 via-navy-ceac/60 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 lg:px-8 py-20 grid lg:grid-cols-2 gap-8">
+        <div class="text-white reveal">
+          <div class="flex flex-wrap gap-3 mb-6">
+            <span class="bg-white/15 backdrop-blur border border-white/30 text-white text-xs font-semibold px-4 py-2 rounded-full">
+              Programa avalado por:
+            </span>
+            <span class="bg-lime-ceac text-navy-ceac text-xs font-bold px-4 py-2 rounded-full">
+              Prácticas garantizadas*
+            </span>
+          </div>
+
+          <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+            Curso de Recepcionista de Hotel
+          </h1>
+          <p class="text-xl md:text-2xl font-medium mb-8 text-white/90">
+            Fórmate a tu ritmo
+          </p>
+
+          <a href="#formulario" class="inline-flex items-center gap-2 bg-lime-ceac hover:bg-lime-ceacDark text-navy-ceac font-bold px-8 py-4 rounded-full text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+            Solicitar información
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <!-- Formulario lateral (opcional) -->
+        <div id="formulario" class="bg-white rounded-2xl p-6 lg:p-8 shadow-2xl reveal">
+          <h2 class="font-heading font-bold text-2xl text-navy-ceac mb-2">¿Te informamos?</h2>
+          <p class="text-sm text-gray-600 mb-6">Déjanos tus datos y te llamamos sin compromiso.</p>
+          <form class="space-y-4" onsubmit="event.preventDefault(); alert('Formulario enviado (demo).');">
+            <input type="text" placeholder="Nombre y apellidos" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-navy-ceac focus:border-transparent" required />
+            <input type="email" placeholder="Email" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-navy-ceac focus:border-transparent" required />
+            <input type="tel" placeholder="Teléfono" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-navy-ceac focus:border-transparent" required />
+            <label class="flex items-start gap-2 text-xs text-gray-600">
+              <input type="checkbox" required class="mt-1" />
+              <span>He leído y acepto la política de privacidad.</span>
+            </label>
+            <button type="submit" class="w-full bg-navy-ceac hover:bg-navy-ceacDark text-white font-bold py-3 rounded-full transition-colors">
+              Enviar
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. QUIÉNES SOMOS ==================== -->
+    <section id="quienes-somos" class="bg-lime-ceac py-20">
+      <div class="max-w-7xl mx-auto px-4 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-8 text-center mb-16 reveal">
+          <div>
+            <p class="font-heading font-extrabold text-5xl lg:text-6xl text-navy-ceac">+3M</p>
+            <p class="mt-2 font-semibold text-navy-ceac">alumnos formados</p>
+          </div>
+          <div>
+            <p class="font-heading font-extrabold text-5xl lg:text-6xl text-navy-ceac">+80</p>
+            <p class="mt-2 font-semibold text-navy-ceac">años de experiencia</p>
+          </div>
+          <div>
+            <p class="font-heading font-extrabold text-5xl lg:text-6xl text-navy-ceac">+250</p>
+            <p class="mt-2 font-semibold text-navy-ceac">docentes en activo</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-md reveal">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl" aria-hidden="true">👋</span>
+            <h2 class="font-heading font-extrabold text-3xl lg:text-4xl text-navy-ceac">Bienvenido</h2>
+          </div>
+          <p class="text-lg leading-relaxed text-gray-700 mb-4">
+            Más de 80 años formando a profesionales nos avalan. En CEAC creemos en una formación cercana,
+            práctica y orientada al empleo, adaptada al ritmo de cada alumno y conectada con la realidad
+            del mercado laboral.
+          </p>
+          <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            Acompañamos a nuestros estudiantes con un equipo docente experto, recursos digitales propios
+            y una red de empresas colaboradoras que abre puertas reales al empleo.
+          </p>
+          <div class="inline-flex items-center gap-3 bg-yellowSoft border border-yellow-200 rounded-xl px-5 py-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A237E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span class="font-semibold text-navy-ceac">Somos Agencia de Colocación Autorizada nº 1200000120</span>
+          </div>
+        </div>
+
+        <!-- 3 institutos -->
+        <div class="mt-16 reveal">
+          <h3 class="font-heading font-bold text-2xl lg:text-3xl text-navy-ceac text-center mb-10">
+            Además, contamos con tres institutos de formación profesional
+          </h3>
+          <div class="grid md:grid-cols-3 gap-6">
+            <!-- Tarjeta instituto -->
+            <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+              <!-- TODO: Sustituir por imagen real de Instituto CEAC Madrid -->
+              <img src="https://placehold.co/600x400/1A237E/FFFFFF?text=Instituto+Madrid" alt="Instituto CEAC Madrid" class="w-full h-48 object-cover" />
+              <div class="p-6">
+                <h4 class="font-heading font-bold text-xl text-navy-ceac">Madrid</h4>
+                <p class="text-sm text-gray-600 mt-1">Instituto CEAC Madrid</p>
+              </div>
+            </article>
+            <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+              <!-- TODO: Sustituir por imagen real de Instituto CEAC Barcelona -->
+              <img src="https://placehold.co/600x400/3F51B5/FFFFFF?text=Instituto+Barcelona" alt="Instituto CEAC Barcelona" class="w-full h-48 object-cover" />
+              <div class="p-6">
+                <h4 class="font-heading font-bold text-xl text-navy-ceac">Barcelona</h4>
+                <p class="text-sm text-gray-600 mt-1">Instituto CEAC Barcelona</p>
+              </div>
+            </article>
+            <article class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+              <!-- TODO: Sustituir por imagen real de Instituto CEAC Valencia -->
+              <img src="https://placehold.co/600x400/1E2A8C/FFFFFF?text=Instituto+Valencia" alt="Instituto CEAC Valencia" class="w-full h-48 object-cover" />
+              <div class="p-6">
+                <h4 class="font-heading font-bold text-xl text-navy-ceac">Valencia</h4>
+                <p class="text-sm text-gray-600 mt-1">Instituto CEAC Valencia</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Nuestros alumnos opinan -->
+        <div class="mt-16 bg-white rounded-2xl p-8 shadow-md reveal">
+          <h3 class="font-heading font-bold text-2xl text-navy-ceac text-center mb-8">Nuestros alumnos opinan</h3>
+          <div class="flex flex-wrap items-center justify-center gap-8">
+            <!-- TODO: Sustituir por logos reales de plataformas de reseñas -->
+            <img src="https://placehold.co/140x50/FFFFFF/333333?text=Google" alt="Reseñas en Google" class="h-10 grayscale hover:grayscale-0 transition-all" />
+            <img src="https://placehold.co/140x50/FFFFFF/333333?text=Trustpilot" alt="Reseñas en Trustpilot" class="h-10 grayscale hover:grayscale-0 transition-all" />
+            <img src="https://placehold.co/140x50/FFFFFF/333333?text=Opiniones" alt="Plataforma de opiniones" class="h-10 grayscale hover:grayscale-0 transition-all" />
+            <img src="https://placehold.co/140x50/FFFFFF/333333?text=Reviews" alt="Reviews verificadas" class="h-10 grayscale hover:grayscale-0 transition-all" />
+          </div>
+        </div>
+
+        <!-- Confían en nuestra formación -->
+        <div class="mt-12 reveal">
+          <h3 class="font-heading font-bold text-2xl text-navy-ceac text-center mb-8">Quienes confían en nuestra formación</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center">
+            <!-- TODO: Sustituir por logos reales de empresas que confían en CEAC -->
+            <img src="https://placehold.co/160x70/FFFFFF/666666?text=Empresa+1" alt="Empresa colaboradora 1" class="h-12 w-auto mx-auto" />
+            <img src="https://placehold.co/160x70/FFFFFF/666666?text=Empresa+2" alt="Empresa colaboradora 2" class="h-12 w-auto mx-auto" />
+            <img src="https://placehold.co/160x70/FFFFFF/666666?text=Empresa+3" alt="Empresa colaboradora 3" class="h-12 w-auto mx-auto" />
+            <img src="https://placehold.co/160x70/FFFFFF/666666?text=Empresa+4" alt="Empresa colaboradora 4" class="h-12 w-auto mx-auto" />
+            <img src="https://placehold.co/160x70/FFFFFF/666666?text=Empresa+5" alt="Empresa colaboradora 5" class="h-12 w-auto mx-auto" />
+            <img src="https://placehold.co/160x70/FFFFFF/666666?text=Empresa+6" alt="Empresa colaboradora 6" class="h-12 w-auto mx-auto" />
+          </div>
+        </div>
+
+        <!-- Sellos de calidad -->
+        <div class="mt-10 flex flex-wrap justify-center items-center gap-6 reveal">
+          <!-- TODO: Sustituir por sellos de calidad reales -->
+          <img src="https://placehold.co/120x120/FFFFFF/1A237E?text=ISO+9001" alt="Sello ISO 9001" class="h-20 w-auto" />
+          <img src="https://placehold.co/120x120/FFFFFF/1A237E?text=Calidad" alt="Sello de calidad" class="h-20 w-auto" />
+          <img src="https://placehold.co/120x120/FFFFFF/1A237E?text=AENOR" alt="Sello AENOR" class="h-20 w-auto" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. ¿POR QUÉ ELEGIR RECEPCIONISTA DE HOTEL? ==================== -->
+    <section id="por-que" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-12 reveal">
+          <h2 class="font-heading font-extrabold text-3xl lg:text-4xl text-navy-ceac mb-4">
+            ¿Por qué elegir Recepcionista de Hotel?
+          </h2>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            El sector hotelero español vive uno de sus mejores momentos. La demanda de profesionales
+            cualificados crece año tras año, con miles de oportunidades laborales en hoteles, resorts
+            y agencias de viajes por todo el territorio.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <article class="bg-yellowSoft rounded-2xl p-8 text-center border border-yellow-200 reveal">
+            <p class="font-heading font-extrabold text-5xl text-navy-ceac">85M</p>
+            <p class="mt-2 font-bold text-lg text-navy-ceac">turistas / año</p>
+            <p class="text-sm text-gray-700 mt-3">España es uno de los destinos turísticos más visitados del mundo.</p>
+          </article>
+          <article class="bg-yellowSoft rounded-2xl p-8 text-center border border-yellow-200 reveal">
+            <p class="font-heading font-extrabold text-5xl text-navy-ceac">18.000 €</p>
+            <p class="mt-2 font-bold text-lg text-navy-ceac">salario medio</p>
+            <p class="text-sm text-gray-700 mt-3">Salario medio anual para puestos de recepción en hostelería.</p>
+          </article>
+          <article class="bg-yellowSoft rounded-2xl p-8 text-center border border-yellow-200 reveal">
+            <p class="font-heading font-extrabold text-5xl text-navy-ceac">15.000</p>
+            <p class="mt-2 font-bold text-lg text-navy-ceac">hoteles en territorio nacional</p>
+            <p class="text-sm text-gray-700 mt-3">Una red enorme de establecimientos donde desarrollar tu carrera.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. LA FORMACIÓN ==================== -->
+    <section class="bg-navy-ceac text-white py-20">
+      <div class="max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <h2 class="font-heading font-extrabold text-3xl lg:text-4xl mb-6 leading-tight">
+            ¡Haz de tu don de gentes una profesión!
+          </h2>
+          <div class="space-y-4 text-white/90 leading-relaxed">
+            <p>
+              Con el Curso de Recepcionista de Hotel de CEAC aprenderás todas las funciones clave
+              del departamento de recepción: gestión de reservas, atención al cliente, protocolo,
+              ventas y herramientas digitales del sector.
+            </p>
+            <p>
+              Te formarás con un equipo docente experto, contenidos actualizados y casos prácticos
+              reales para que adquieras las competencias que demandan los mejores hoteles.
+            </p>
+            <p>
+              Una formación 100 % online, flexible y compatible con tu vida personal y profesional,
+              con prácticas garantizadas en empresas del sector.
+            </p>
+          </div>
+        </div>
+        <div class="reveal">
+          <!-- TODO: Sustituir por imagen real de un recepcionista trabajando -->
+          <img src="https://placehold.co/800x600/1E2A8C/FFFFFF?text=Recepcionista+trabajando"
+               alt="Recepcionista de hotel atendiendo a un cliente"
+               class="rounded-2xl shadow-2xl w-full" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. SALIDAS PROFESIONALES ==================== -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 lg:px-8">
+        <div class="text-center mb-12 reveal">
+          <h2 class="font-heading font-extrabold text-3xl lg:text-4xl text-navy-ceac mb-3">
+            Salidas profesionales
+          </h2>
+          <p class="text-gray-700 max-w-2xl mx-auto">
+            Una titulación, muchas oportunidades. Estas son algunas de las profesiones a las que podrás
+            acceder al terminar tu formación.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-navy-ceac text-white rounded-xl p-5 font-semibold hover:bg-navy-ceacDark transition-colors">Recepcionista de hotel</div>
+          <div class="bg-navy-ceac text-white rounded-xl p-5 font-semibold hover:bg-navy-ceacDark transition-colors">Agente de reservas</div>
+          <div class="bg-navy-ceac text-white rounded-xl p-5 font-semibold hover:bg-navy-ceacDark transition-colors">Personal de atención al cliente</div>
+          <div class="bg-navy-ceac text-white rounded-xl p-5 font-semibold hover:bg-navy-ceacDark transition-colors">Auxiliar de recepción</div>
+          <div class="bg-navy-ceac text-white rounded-xl p-5 font-semibold hover:bg-navy-ceacDark transition-colors">Conserje de apartamentos turísticos</div>
+          <div class="bg-navy-ceac text-white rounded-xl p-5 font-semibold hover:bg-navy-ceacDark transition-colors">Personal de agencias de viajes</div>
+          <div class="bg-navy-ceac text-white rounded-xl p-5 font-semibold hover:bg-navy-ceacDark transition-colors">Guest Service en cruceros</div>
+          <div class="bg-navy-ceac text-white rounded-xl p-5 font-semibold hover:bg-navy-ceacDark transition-colors">Personal de front office</div>
+          <div class="bg-navy-ceac text-white rounded-xl p-5 font-semibold hover:bg-navy-ceacDark transition-colors">Atención al cliente en alojamientos</div>
+          <div class="bg-navy-ceac text-white rounded-xl p-5 font-semibold hover:bg-navy-ceacDark transition-colors">Recepcionista en resorts</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. DOBLE TITULACIÓN ==================== -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 lg:px-8">
+        <div class="text-center mb-12 reveal">
+          <h2 class="font-heading font-extrabold text-3xl lg:text-4xl text-navy-ceac mb-3">
+            Doble titulación
+          </h2>
+          <p class="text-gray-700">Al finalizar el curso obtendrás dos diplomas que avalan tu formación.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <article class="bg-gray-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow reveal">
+            <!-- TODO: Sustituir por imagen real del diploma CEAC -->
+            <img src="https://placehold.co/800x500/1A237E/FFFFFF?text=Diploma+CEAC" alt="Diploma CEAC del curso de Recepcionista de Hotel" class="w-full" />
+            <div class="p-6">
+              <h3 class="font-heading font-bold text-xl text-navy-ceac">Diploma CEAC</h3>
+              <p class="text-gray-700 mt-2">
+                Acredita los conocimientos adquiridos a lo largo del curso de Recepcionista de Hotel.
+              </p>
+            </div>
+          </article>
+
+          <article class="bg-gray-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow reveal">
+            <!-- TODO: Sustituir por imagen real del diploma Nebrija -->
+            <img src="https://placehold.co/800x500/3F51B5/FFFFFF?text=Diploma+Nebrija" alt="Diploma Universidad Nebrija" class="w-full" />
+            <div class="p-6">
+              <h3 class="font-heading font-bold text-xl text-navy-ceac">Diploma Nebrija</h3>
+              <p class="text-gray-700 mt-2">
+                Expedido por la Universidad Nebrija, refuerza el valor curricular de tu formación.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <p class="text-xs text-gray-500 mt-6 italic">
+          *Enseñanzas que no conducen a la obtención de un título con valor oficial.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== 7. CONSIGUE TU CERTIFICACIÓN ==================== -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-5xl mx-auto px-4 lg:px-8">
+        <div class="bg-white rounded-2xl border-l-8 border-lime-ceac p-8 lg:p-12 shadow-md reveal">
+          <h2 class="font-heading font-extrabold text-3xl lg:text-4xl text-navy-ceac mb-4">
+            ¡Consigue tu certificación!
+          </h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-4">
+            Esta formación te prepara para obtener el certificado profesional
+            <strong>HOT094_3 Recepción</strong>, reconocido a nivel nacional y muy valorado por las
+            empresas del sector hotelero.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Tras superar el curso, podrás presentarte a las pruebas oficiales convocadas por las
+            administraciones competentes para acreditar oficialmente tu cualificación profesional.
+          </p>
+          <p class="text-xs text-gray-500 leading-relaxed italic">
+            *Esta formación no conduce de forma directa a la obtención del certificado profesional
+            HOT094_3 Recepción. Las pruebas de evaluación y reconocimiento de competencias son
+            convocadas por los organismos públicos competentes y las condiciones de acceso pueden
+            variar según la comunidad autónoma. La obtención del certificado dependerá de superar
+            dichas pruebas según la normativa vigente. CEAC no garantiza la obtención automática del
+            certificado, sino que facilita la preparación de los contenidos teóricos y prácticos
+            necesarios para optar a él.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. OBJETIVOS DE LA FORMACIÓN ==================== -->
+    <section id="objetivos" class="bg-lime-ceac py-20">
+      <div class="max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <h2 class="font-heading font-extrabold text-3xl lg:text-4xl text-navy-ceac mb-6">
+            Objetivos de la formación
+          </h2>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-navy-ceac text-white flex items-center justify-center mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span class="text-navy-ceac font-medium">Conocer la operativa y funciones del departamento de recepción.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-navy-ceac text-white flex items-center justify-center mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span class="text-navy-ceac font-medium">Gestionar reservas de habitaciones y servicios asociados.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-navy-ceac text-white flex items-center justify-center mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span class="text-navy-ceac font-medium">Utilizar herramientas y programas de gestión hotelera.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-navy-ceac text-white flex items-center justify-center mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span class="text-navy-ceac font-medium">Desarrollar habilidades comerciales y de fidelización.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-navy-ceac text-white flex items-center justify-center mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span class="text-navy-ceac font-medium">Gestionar información sensible conforme a la normativa vigente.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-navy-ceac text-white flex items-center justify-center mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span class="text-navy-ceac font-medium">Aplicar normas de protocolo y presentación profesional.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-navy-ceac text-white flex items-center justify-center mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span class="text-navy-ceac font-medium">Comprender el funcionamiento del sector turístico y sus estrategias de marketing.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <!-- TODO: Sustituir por imagen real ilustrativa de objetivos -->
+          <img src="https://placehold.co/800x700/1A237E/D4E157?text=Objetivos+de+la+formación"
+               alt="Profesional de recepción de hotel"
+               class="rounded-2xl shadow-2xl w-full" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 9. TEMARIO ==================== -->
+    <section id="temario" class="py-20 bg-white">
+      <div class="max-w-5xl mx-auto px-4 lg:px-8">
+        <div class="text-center mb-12 reveal">
+          <h2 class="font-heading font-extrabold text-3xl lg:text-4xl text-navy-ceac mb-3">
+            Descubre nuestro temario
+          </h2>
+          <p class="text-gray-700">
+            <strong class="text-navy-ceac">510 horas lectivas</strong> · 9 módulos formativos
+          </p>
+        </div>
+
+        <div class="space-y-3" id="accordion">
+          <!-- Módulo 1 -->
+          <div class="border border-gray-200 rounded-xl overflow-hidden">
+            <button class="acc-btn w-full flex justify-between items-center px-6 py-4 text-left hover:bg-gray-50 transition-colors" aria-expanded="false">
+              <span class="font-semibold text-navy-ceac"><span class="text-lime-ceacDark mr-2">01</span>Gestión de reservas de habitaciones y servicios propios de alojamientos</span>
+              <svg class="acc-icon flex-shrink-0 w-5 h-5 text-navy-ceac transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-panel hidden px-6 pb-5 text-gray-700">
+              <p>Procesos y procedimientos para gestionar reservas individuales y de grupos, gestión de canales de venta directos e intermediarios, y atención de incidencias relacionadas con la reserva.</p>
+            </div>
+          </div>
+
+          <!-- Módulo 2 -->
+          <div class="border border-gray-200 rounded-xl overflow-hidden">
+            <button class="acc-btn w-full flex justify-between items-center px-6 py-4 text-left hover:bg-gray-50 transition-colors" aria-expanded="false">
+              <span class="font-semibold text-navy-ceac"><span class="text-lime-ceacDark mr-2">02</span>Diseño y ejecución de acciones comerciales en alojamientos</span>
+              <svg class="acc-icon flex-shrink-0 w-5 h-5 text-navy-ceac transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-panel hidden px-6 pb-5 text-gray-700">
+              <p>Planificación y desarrollo de acciones de marketing y ventas adaptadas al sector alojativo, análisis de la competencia y fidelización del cliente.</p>
+            </div>
+          </div>
+
+          <!-- Módulo 3 -->
+          <div class="border border-gray-200 rounded-xl overflow-hidden">
+            <button class="acc-btn w-full flex justify-between items-center px-6 py-4 text-left hover:bg-gray-50 transition-colors" aria-expanded="false">
+              <span class="font-semibold text-navy-ceac"><span class="text-lime-ceacDark mr-2">03</span>Comunicación y atención al cliente en hostelería y turismo</span>
+              <svg class="acc-icon flex-shrink-0 w-5 h-5 text-navy-ceac transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-panel hidden px-6 pb-5 text-gray-700">
+              <p>Técnicas de comunicación verbal y no verbal, gestión de quejas y reclamaciones, y herramientas para una atención al cliente excelente.</p>
+            </div>
+          </div>
+
+          <!-- Módulo 4 -->
+          <div class="border border-gray-200 rounded-xl overflow-hidden">
+            <button class="acc-btn w-full flex justify-between items-center px-6 py-4 text-left hover:bg-gray-50 transition-colors" aria-expanded="false">
+              <span class="font-semibold text-navy-ceac"><span class="text-lime-ceacDark mr-2">04</span>Organización y prestación del servicio de recepción en alojamientos</span>
+              <svg class="acc-icon flex-shrink-0 w-5 h-5 text-navy-ceac transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-panel hidden px-6 pb-5 text-gray-700">
+              <p>Procesos de check-in y check-out, gestión de la facturación y coordinación con el resto de departamentos del hotel.</p>
+            </div>
+          </div>
+
+          <!-- Módulo 5 -->
+          <div class="border border-gray-200 rounded-xl overflow-hidden">
+            <button class="acc-btn w-full flex justify-between items-center px-6 py-4 text-left hover:bg-gray-50 transition-colors" aria-expanded="false">
+              <span class="font-semibold text-navy-ceac"><span class="text-lime-ceacDark mr-2">05</span>Gestión de protocolo</span>
+              <svg class="acc-icon flex-shrink-0 w-5 h-5 text-navy-ceac transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-panel hidden px-6 pb-5 text-gray-700">
+              <p>Normas de protocolo aplicadas al sector turístico, eventos institucionales y trato a clientes VIP.</p>
+            </div>
+          </div>
+
+          <!-- Módulo 6 -->
+          <div class="border border-gray-200 rounded-xl overflow-hidden">
+            <button class="acc-btn w-full flex justify-between items-center px-6 py-4 text-left hover:bg-gray-50 transition-colors" aria-expanded="false">
+              <span class="font-semibold text-navy-ceac"><span class="text-lime-ceacDark mr-2">06</span>Función del mando intermedio en la prevención de riesgos laborales</span>
+              <svg class="acc-icon flex-shrink-0 w-5 h-5 text-navy-ceac transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-panel hidden px-6 pb-5 text-gray-700">
+              <p>Conceptos clave de PRL aplicados al entorno hotelero, evaluación de riesgos y normativa vigente.</p>
+            </div>
+          </div>
+
+          <!-- Módulo 7 -->
+          <div class="border border-gray-200 rounded-xl overflow-hidden">
+            <button class="acc-btn w-full flex justify-between items-center px-6 py-4 text-left hover:bg-gray-50 transition-colors" aria-expanded="false">
+              <span class="font-semibold text-navy-ceac"><span class="text-lime-ceacDark mr-2">07</span>Procesos de gestión de departamentos del área de alojamiento</span>
+              <svg class="acc-icon flex-shrink-0 w-5 h-5 text-navy-ceac transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-panel hidden px-6 pb-5 text-gray-700">
+              <p>Estructura organizativa, coordinación interdepartamental y gestión operativa diaria del área de alojamiento.</p>
+            </div>
+          </div>
+
+          <!-- Módulo 8 -->
+          <div class="border border-gray-200 rounded-xl overflow-hidden">
+            <button class="acc-btn w-full flex justify-between items-center px-6 py-4 text-left hover:bg-gray-50 transition-colors" aria-expanded="false">
+              <span class="font-semibold text-navy-ceac"><span class="text-lime-ceacDark mr-2">08</span>Procesos de gestión de calidad en hostelería y turismo</span>
+              <svg class="acc-icon flex-shrink-0 w-5 h-5 text-navy-ceac transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-panel hidden px-6 pb-5 text-gray-700">
+              <p>Sistemas de gestión de calidad, mejora continua y herramientas para garantizar la satisfacción del cliente.</p>
+            </div>
+          </div>
+
+          <!-- Módulo 9 -->
+          <div class="border border-gray-200 rounded-xl overflow-hidden">
+            <button class="acc-btn w-full flex justify-between items-center px-6 py-4 text-left hover:bg-gray-50 transition-colors" aria-expanded="false">
+              <span class="font-semibold text-navy-ceac"><span class="text-lime-ceacDark mr-2">09</span>English for Hotel Receptionists</span>
+              <svg class="acc-icon flex-shrink-0 w-5 h-5 text-navy-ceac transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-panel hidden px-6 pb-5 text-gray-700">
+              <p>Inglés profesional aplicado a la recepción de hotel: vocabulario específico, conversaciones tipo y resolución de situaciones reales con clientes internacionales.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-10 reveal">
+          <a href="#formulario" class="inline-flex items-center gap-2 bg-lime-ceac hover:bg-lime-ceacDark text-navy-ceac font-bold px-8 py-4 rounded-full transition-all shadow-md hover:shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Descarga nuestro temario gratis
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 10. EQUIPO DOCENTE ==================== -->
+    <section id="equipo" class="py-20 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4 lg:px-8">
+        <div class="text-center mb-12 reveal">
+          <h2 class="font-heading font-extrabold text-3xl lg:text-4xl text-navy-ceac mb-3">
+            Equipo docente
+          </h2>
+          <p class="text-gray-700">Profesionales en activo con amplia experiencia en el sector.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <article class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow flex flex-col sm:flex-row gap-6 items-center sm:items-start reveal">
+            <!-- TODO: Sustituir por foto real de Cora Rilo -->
+            <img src="https://placehold.co/200x200/D4E157/1A237E?text=Cora+Rilo" alt="Cora Rilo, docente del curso" class="w-32 h-32 rounded-full object-cover flex-shrink-0" />
+            <div class="text-center sm:text-left">
+              <h3 class="font-heading font-bold text-xl text-navy-ceac">Cora Rilo</h3>
+              <p class="text-sm text-gray-500 mb-3">Docente especialista en Turismo</p>
+              <p class="text-gray-700 leading-relaxed text-sm">
+                Diplomada en Turismo y Licenciada en Traducción e Interpretación. Cuenta con amplia
+                experiencia en gestión hotelera, atención al cliente internacional y formación de
+                profesionales en el sector turístico.
+              </p>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow flex flex-col sm:flex-row gap-6 items-center sm:items-start reveal">
+            <!-- TODO: Sustituir por foto real de Cristina Bacci -->
+            <img src="https://placehold.co/200x200/3F51B5/FFFFFF?text=Cristina+B." alt="Cristina Bacci, docente del curso" class="w-32 h-32 rounded-full object-cover flex-shrink-0" />
+            <div class="text-center sm:text-left">
+              <h3 class="font-heading font-bold text-xl text-navy-ceac">Cristina Bacci</h3>
+              <p class="text-sm text-gray-500 mb-3">Docente de inglés profesional</p>
+              <p class="text-gray-700 leading-relaxed text-sm">
+                Licenciada en Filología inglesa por la Universidad Autónoma de Madrid. Especialista
+                en inglés aplicado al sector turístico y hotelero, con experiencia internacional en
+                la enseñanza de idiomas a profesionales del turismo.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 11. APRENDE TRABAJANDO ==================== -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <!-- TODO: Sustituir por imagen real de prácticas en hotel -->
+          <img src="https://placehold.co/800x600/D4E157/1A237E?text=Prácticas+en+empresa"
+               alt="Estudiante realizando prácticas profesionales en hotel"
+               class="rounded-2xl shadow-xl w-full" />
+        </div>
+        <div class="reveal">
+          <h2 class="font-heading font-extrabold text-3xl lg:text-4xl text-navy-ceac mb-6">
+            Aprende trabajando
+          </h2>
+          <div class="space-y-4 text-gray-700 leading-relaxed">
+            <p>
+              Realizarás prácticas profesionales en empresas colaboradoras del sector hotelero,
+              donde aplicarás todo lo aprendido en un entorno real de trabajo.
+            </p>
+            <p>
+              Nuestro equipo de orientación te acompaña en todo el proceso: desde la búsqueda del
+              centro adecuado a tu perfil hasta la incorporación, asegurando una experiencia
+              formativa de calidad.
+            </p>
+            <p>
+              Las prácticas son una de las mejores vías de inserción laboral: muchos de nuestros
+              alumnos consiguen su primer empleo en la propia empresa donde han realizado las prácticas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 12. BOLSA DE EMPLEO CON RANDSTAD ==================== -->
+    <section class="py-16 bg-gradient-to-r from-navy-ceac to-navy-ceacDark text-white">
+      <div class="max-w-6xl mx-auto px-4 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8 reveal">
+        <div>
+          <p class="font-semibold uppercase tracking-wider text-lime-ceac text-sm mb-2">Bolsa de empleo</p>
+          <h2 class="font-heading font-extrabold text-3xl lg:text-4xl mb-2">
+            Empleabilidad real con Randstad
+          </h2>
+          <p class="text-white/85 max-w-2xl">
+            Nuestros alumnos acceden a la bolsa de empleo gestionada en colaboración con Randstad,
+            una de las mayores consultoras de recursos humanos del mundo.
+          </p>
+        </div>
+        <div class="flex-shrink-0 bg-white rounded-2xl p-6">
+          <!-- TODO: Sustituir por logo real de Randstad -->
+          <img src="https://placehold.co/220x80/FFFFFF/2175D9?text=randstad" alt="Logo Randstad" class="h-16 w-auto" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 13. RED DE EMPRESAS ==================== -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 lg:px-8">
+        <div class="text-center mb-10 reveal">
+          <h2 class="font-heading font-extrabold text-3xl lg:text-4xl text-navy-ceac mb-3">
+            Red de empresas colaboradoras
+          </h2>
+          <p class="text-gray-700">Algunos de los hoteles y cadenas que confían en nuestros alumnos.</p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center reveal">
+          <!-- TODO: Sustituir por logos reales de hoteles colaboradores -->
+          <img src="https://placehold.co/180x80/FFFFFF/666666?text=Hotel+1" alt="Hotel colaborador 1" class="h-14 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="https://placehold.co/180x80/FFFFFF/666666?text=Hotel+2" alt="Hotel colaborador 2" class="h-14 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="https://placehold.co/180x80/FFFFFF/666666?text=Hotel+3" alt="Hotel colaborador 3" class="h-14 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="https://placehold.co/180x80/FFFFFF/666666?text=Hotel+4" alt="Hotel colaborador 4" class="h-14 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="https://placehold.co/180x80/FFFFFF/666666?text=Hotel+5" alt="Hotel colaborador 5" class="h-14 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="https://placehold.co/180x80/FFFFFF/666666?text=Hotel+6" alt="Hotel colaborador 6" class="h-14 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="https://placehold.co/180x80/FFFFFF/666666?text=Hotel+7" alt="Hotel colaborador 7" class="h-14 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="https://placehold.co/180x80/FFFFFF/666666?text=Hotel+8" alt="Hotel colaborador 8" class="h-14 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="https://placehold.co/180x80/FFFFFF/666666?text=Hotel+9" alt="Hotel colaborador 9" class="h-14 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity" />
+          <img src="https://placehold.co/180x80/FFFFFF/666666?text=Hotel+10" alt="Hotel colaborador 10" class="h-14 w-auto mx-auto opacity-80 hover:opacity-100 transition-opacity" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 14. METODOLOGÍA CEAC ==================== -->
+    <section id="metodologia" class="py-20 bg-blue-50">
+      <div class="max-w-7xl mx-auto px-4 lg:px-8">
+        <div class="text-center mb-14 reveal">
+          <h2 class="font-heading font-extrabold text-3xl lg:text-4xl text-navy-ceac mb-3">
+            Metodología CEAC
+          </h2>
+          <p class="text-gray-700 max-w-2xl mx-auto">
+            Una metodología probada, basada en tres pilares que combinan teoría, recursos y experiencia real.
+          </p>
+        </div>
+
+        <div class="relative grid md:grid-cols-3 gap-8 md:gap-4">
+          <!-- Línea decorativa -->
+          <div class="hidden md:block absolute top-12 left-[16%] right-[16%] h-1 bg-lime-ceac/50 rounded-full" aria-hidden="true"></div>
+
+          <article class="relative bg-white rounded-2xl p-8 shadow-md text-center hover:shadow-xl transition-shadow reveal">
+            <div class="w-16 h-16 mx-auto rounded-full bg-navy-ceac text-white font-heading font-extrabold text-xl flex items-center justify-center mb-4 relative z-10">01</div>
+            <h3 class="font-heading font-bold text-xl text-navy-ceac mb-2">Formación teórica</h3>
+            <p class="text-gray-700">
+              Contenidos actualizados, multimedia e interactivos, diseñados por expertos del sector.
+            </p>
+          </article>
+
+          <article class="relative bg-white rounded-2xl p-8 shadow-md text-center hover:shadow-xl transition-shadow md:mt-8 reveal">
+            <div class="w-16 h-16 mx-auto rounded-full bg-navy-ceac text-white font-heading font-extrabold text-xl flex items-center justify-center mb-4 relative z-10">02</div>
+            <h3 class="font-heading font-bold text-xl text-navy-ceac mb-2">Recursos y campus</h3>
+            <p class="text-gray-700">
+              Acceso 24/7 a nuestro campus virtual con tutorías, simuladores y materiales descargables.
+            </p>
+          </article>
+
+          <article class="relative bg-white rounded-2xl p-8 shadow-md text-center hover:shadow-xl transition-shadow md:mt-16 reveal">
+            <div class="w-16 h-16 mx-auto rounded-full bg-navy-ceac text-white font-heading font-extrabold text-xl flex items-center justify-center mb-4 relative z-10">03</div>
+            <h3 class="font-heading font-bold text-xl text-navy-ceac mb-2">Prácticas garantizadas</h3>
+            <p class="text-gray-700">
+              Prácticas profesionales aseguradas en empresas reales del sector hotelero.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 15. CAMPUS VIRTUAL ==================== -->
+    <section id="sobre-ceac" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <p class="font-semibold uppercase tracking-wider text-blueMid text-sm mb-2">Campus virtual</p>
+          <h2 class="font-heading font-extrabold text-3xl lg:text-4xl text-navy-ceac mb-6">
+            Aprende desde cualquier dispositivo, a tu ritmo
+          </h2>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-3"><span class="text-lime-ceacDark mt-1">●</span> Acceso 24/7 desde móvil, tablet u ordenador.</li>
+            <li class="flex items-start gap-3"><span class="text-lime-ceacDark mt-1">●</span> Tutorías personalizadas con tu equipo docente.</li>
+            <li class="flex items-start gap-3"><span class="text-lime-ceacDark mt-1">●</span> Foros, recursos descargables y casos prácticos.</li>
+            <li class="flex items-start gap-3"><span class="text-lime-ceacDark mt-1">●</span> Seguimiento de tu progreso en tiempo real.</li>
+            <li class="flex items-start gap-3"><span class="text-lime-ceacDark mt-1">●</span> Comunidad de alumnos y networking profesional.</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <!-- TODO: Sustituir por captura real del campus virtual -->
+          <img src="https://placehold.co/900x600/3F51B5/FFFFFF?text=Campus+Virtual+CEAC"
+               alt="Captura del campus virtual de CEAC en distintos dispositivos"
+               class="rounded-2xl shadow-2xl w-full" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 16. CTA FINAL ==================== -->
+    <section class="py-20 bg-lime-ceac">
+      <div class="max-w-4xl mx-auto px-4 lg:px-8 text-center reveal">
+        <p class="font-heading font-extrabold text-4xl lg:text-6xl text-navy-ceac leading-tight mb-6">
+          Te formas <span class="inline-block mx-2" aria-hidden="true">→</span> trabajas
+        </p>
+        <p class="text-lg text-navy-ceac/90 mb-8 max-w-2xl mx-auto">
+          Da el primer paso hacia tu nueva profesión. Te asesoramos sin compromiso.
+        </p>
+        <a href="#formulario" class="inline-flex items-center gap-2 bg-navy-ceac hover:bg-navy-ceacDark text-white font-bold px-10 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
+          Infórmate
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-navy-ceac text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <!-- Logo CEAC blanco -->
+          <img src="https://placehold.co/140x50/1A237E/FFFFFF?text=CEAC" alt="Logo CEAC" class="h-10 w-auto mb-4" />
+          <p class="text-white/80 text-sm leading-relaxed">
+            Más de 80 años formando a profesionales en España. Formación a distancia, presencial y online
+            para impulsar tu carrera.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-heading font-bold mb-4">Información legal</h3>
+          <ul class="space-y-2 text-sm text-white/80">
+            <li><a href="#" class="hover:text-lime-ceac transition-colors">Aviso legal</a></li>
+            <li><a href="#" class="hover:text-lime-ceac transition-colors">Política de privacidad</a></li>
+            <li><a href="#" class="hover:text-lime-ceac transition-colors">Política de cookies</a></li>
+            <li><a href="#" class="hover:text-lime-ceac transition-colors">Términos y condiciones</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-heading font-bold mb-4">Síguenos</h3>
+          <div class="flex gap-3">
+            <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full bg-white/10 hover:bg-lime-ceac hover:text-navy-ceac flex items-center justify-center transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9V14.9H8v-2.9h2.4V9.8c0-2.4 1.4-3.7 3.6-3.7 1 0 2.1.2 2.1.2v2.3h-1.2c-1.2 0-1.5.7-1.5 1.5v1.8h2.6l-.4 2.9h-2.2v7C18.2 21.9 22 17.4 22 12z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full bg-white/10 hover:bg-lime-ceac hover:text-navy-ceac flex items-center justify-center transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.4a4 4 0 1 1-7.9 1 4 4 0 0 1 7.9-1z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-white/10 hover:bg-lime-ceac hover:text-navy-ceac flex items-center justify-center transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 3H3.6C3.3 3 3 3.3 3 3.6v16.8c0 .3.3.6.6.6h16.8c.3 0 .6-.3.6-.6V3.6c0-.3-.3-.6-.6-.6zM8.3 18.3H5.6V9.7h2.7v8.6zM7 8.5c-.9 0-1.6-.7-1.6-1.6S6.1 5.3 7 5.3s1.6.7 1.6 1.6S7.9 8.5 7 8.5zm11.4 9.8h-2.7V14c0-1 0-2.3-1.4-2.3s-1.6 1.1-1.6 2.2v4.4H10V9.7h2.6v1.2c.4-.7 1.3-1.4 2.6-1.4 2.8 0 3.3 1.8 3.3 4.2v4.6z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube" class="w-10 h-10 rounded-full bg-white/10 hover:bg-lime-ceac hover:text-navy-ceac flex items-center justify-center transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2s-.2-1.6-.9-2.3c-.8-.9-1.8-.9-2.2-1C16.7 3.6 12 3.6 12 3.6s-4.7 0-7.9.3c-.4.1-1.4.1-2.2 1-.7.7-.9 2.3-.9 2.3S.7 9.1.7 11v1.7c0 1.9.3 3.8.3 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 7.4.3 7.7.3 0 0 4.7 0 7.9-.2.4-.1 1.4-.1 2.2-1 .7-.7.9-2.3.9-2.3s.3-1.9.3-3.8V11c0-1.9-.3-3.8-.3-3.8zM9.8 14.7V8.6l6 3-6 3.1z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/15 pt-6 text-sm text-white/70 text-center">
+        ©2026. CEAC Cursos. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

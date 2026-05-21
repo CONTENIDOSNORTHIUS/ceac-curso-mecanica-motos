@@ -1,0 +1,21 @@
+{
+  "name": "ceac-recepcionista-hotel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page del Curso de Recepcionista de Hotel — CEAC. HTML5 + TailwindCSS + JS vanilla.",
+  "scripts": {
+    "dev": "npx serve . -l 3000",
+    "start": "npx serve . -l 3000",
+    "build": "echo \"Sitio estático, no requiere build.\""
+  },
+  "keywords": [
+    "ceac",
+    "landing",
+    "recepcionista",
+    "hotel",
+    "tailwind",
+    "vercel"
+  ],
+  "author": "",
+  "license": "MIT"
+}
