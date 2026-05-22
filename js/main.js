@@ -80,7 +80,22 @@
     }, { passive: true });
   });
 
-  /* ---------- 5. Nav: transparente sobre hero → blanco al hacer scroll ---------- */
+  /* ---------- 5. Carrusel de opiniones (Trustpilot) ---------- */
+  const reviewsTrack = document.getElementById('reviewsTrack');
+  const reviewsPrev = document.getElementById('reviewsPrev');
+  const reviewsNext = document.getElementById('reviewsNext');
+  if (reviewsTrack && reviewsPrev && reviewsNext) {
+    const stepPx = () => {
+      const card = reviewsTrack.querySelector('article');
+      if (!card) return 320;
+      const gap = parseFloat(getComputedStyle(reviewsTrack).gap) || 16;
+      return card.offsetWidth + gap;
+    };
+    reviewsPrev.addEventListener('click', () => reviewsTrack.scrollBy({ left: -stepPx(), behavior: 'smooth' }));
+    reviewsNext.addEventListener('click', () => reviewsTrack.scrollBy({ left: stepPx(), behavior: 'smooth' }));
+  }
+
+  /* ---------- 6. Nav: transparente sobre hero → blanco al hacer scroll ---------- */
   const nav = document.getElementById('nav');
   const navLogo = document.getElementById('navLogo');
   const navLinks = document.getElementById('navLinks');
