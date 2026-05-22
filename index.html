@@ -235,50 +235,41 @@
           </ul>
         </div>
 
-        <!-- 3 tarjetas con marco azul corporativo + vídeo a sangre + franja Cód. centro -->
+        <!-- 3 tarjetas con marco azul: vídeo arriba + ciudad/dirección abajo (todo dentro del marco) -->
         <div class="grid grid-cols-3 gap-3 md:gap-4 reveal">
-          <article class="instituto-card bg-ceac-blue rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow p-1.5 md:p-2">
-            <!-- Marco interior con el vídeo -->
-            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-ceac-blueDark">
-              <video class="instituto-video absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="metadata" aria-label="Vídeo del Instituto CEAC Madrid">
+          <article class="bg-ceac-blue rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow p-2 md:p-3">
+            <!-- Vídeo en la parte superior con marco azul alrededor -->
+            <div class="relative aspect-[4/3] rounded-lg overflow-hidden bg-ceac-blueDark mb-3 md:mb-4">
+              <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto" aria-label="Vídeo del Instituto CEAC Madrid">
                 <source src="assets/videos/madrid.webm" type="video/webm" />
               </video>
-              <div class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none"></div>
-              <div class="absolute inset-x-0 bottom-0 p-3 md:p-4">
-                <p class="font-display italic text-xl md:text-3xl text-white leading-tight">Madrid</p>
-                <p class="text-white/90 text-[10px] md:text-xs mt-1 md:mt-2 leading-snug">Pl. Cisneros, nº 1, 28037</p>
-              </div>
             </div>
-            <!-- Franja inferior azul con Cód. centro -->
-            <p class="text-white/80 text-[8px] md:text-[10px] px-1 md:px-2 pt-2 pb-1">Cód. centro: 28066709</p>
+            <!-- Texto dentro del marco azul -->
+            <p class="font-display italic text-2xl md:text-4xl text-white leading-tight">Madrid</p>
+            <p class="text-white/90 text-[11px] md:text-sm mt-1 md:mt-2 leading-snug">Pl. Cronos, nº 1, 28037</p>
+            <p class="text-white/70 text-[9px] md:text-[11px] mt-3 md:mt-4">Cód. centro: 28081169</p>
           </article>
 
-          <article class="instituto-card bg-ceac-blue rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow p-1.5 md:p-2">
-            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-ceac-blueDark">
-              <video class="instituto-video absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="metadata" aria-label="Vídeo del Instituto CEAC Barcelona">
+          <article class="bg-ceac-blue rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow p-2 md:p-3">
+            <div class="relative aspect-[4/3] rounded-lg overflow-hidden bg-ceac-blueDark mb-3 md:mb-4">
+              <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto" aria-label="Vídeo del Instituto CEAC Barcelona">
                 <source src="assets/videos/barcelona.webm" type="video/webm" />
               </video>
-              <div class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none"></div>
-              <div class="absolute inset-x-0 bottom-0 p-3 md:p-4">
-                <p class="font-display italic text-xl md:text-3xl text-white leading-tight">Barcelona</p>
-                <p class="text-white/90 text-[10px] md:text-xs mt-1 md:mt-2 leading-snug">C. de Salvador Espriu, 33, 08908 L'Hospitalet de Llobregat</p>
-              </div>
             </div>
-            <p class="text-white/80 text-[8px] md:text-[10px] px-1 md:px-2 pt-2 pb-1">Cód. centro: 08075262</p>
+            <p class="font-display italic text-2xl md:text-4xl text-white leading-tight">Barcelona</p>
+            <p class="text-white/90 text-[11px] md:text-sm mt-1 md:mt-2 leading-snug">C. de Salvador Espriu, 38, 08908 L'Hospitalet de Llobregat</p>
+            <p class="text-white/70 text-[9px] md:text-[11px] mt-3 md:mt-4">Cód. centro: 08078282</p>
           </article>
 
-          <article class="instituto-card bg-ceac-blue rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow p-1.5 md:p-2">
-            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-ceac-blueDark">
-              <video class="instituto-video absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="metadata" aria-label="Vídeo del Instituto CEAC Valencia">
+          <article class="bg-ceac-blue rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow p-2 md:p-3">
+            <div class="relative aspect-[4/3] rounded-lg overflow-hidden bg-ceac-blueDark mb-3 md:mb-4">
+              <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto" aria-label="Vídeo del Instituto CEAC Valencia">
                 <source src="assets/videos/valencia.webm" type="video/webm" />
               </video>
-              <div class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none"></div>
-              <div class="absolute inset-x-0 bottom-0 p-3 md:p-4">
-                <p class="font-display italic text-xl md:text-3xl text-white leading-tight">Valencia</p>
-                <p class="text-white/90 text-[10px] md:text-xs mt-1 md:mt-2 leading-snug">Avenida de la Ilustración, 4, 46100 Burjasot</p>
-              </div>
             </div>
-            <p class="text-white/80 text-[8px] md:text-[10px] px-1 md:px-2 pt-2 pb-1">Cód. centro: 46033550</p>
+            <p class="font-display italic text-2xl md:text-4xl text-white leading-tight">Valencia</p>
+            <p class="text-white/90 text-[11px] md:text-sm mt-1 md:mt-2 leading-snug">Avenida de la Ilustración, 4, 46100 Burjassot</p>
+            <p class="text-white/70 text-[9px] md:text-[11px] mt-3 md:mt-4">Cód. centro: 46037650</p>
           </article>
         </div>
       </div>
