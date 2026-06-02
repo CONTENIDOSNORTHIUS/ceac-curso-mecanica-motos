@@ -117,25 +117,56 @@
     });
   }
 
-  /* ---------- 6. Carrusel de logos colaboradores (flechas prev/next con loop) ---------- */
+  /* ---------- 6. Carrusel de logos colaboradores (loop infinito con duplicado) ---------- */
   const logosTrack = document.getElementById('logosTrack');
   const logosPrev  = document.getElementById('logosPrev');
   const logosNext  = document.getElementById('logosNext');
   if (logosTrack && logosPrev && logosNext) {
-    const step = () => {
+    // Duplicamos el set de logos para crear la ilusión de loop infinito
+    const originalCount = logosTrack.children.length;
+    Array.from(logosTrack.children).forEach(item => {
+      const clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.querySelectorAll('img').forEach(img => { img.alt = ''; });
+      logosTrack.appendChild(clone);
+    });
+
+    const stepPx = () => {
       const card = logosTrack.querySelector('.logo-card');
-      if (!card) return 240;
+      if (!card) return 200;
       const gap = parseFloat(getComputedStyle(logosTrack).gap) || 16;
       return card.offsetWidth + gap;
     };
+    const setWidth = () => originalCount * stepPx();
+
+    // Reset silencioso: si se pasa del set original, salta atrás SIN animación
+    const silentRewind = (delta) => {
+      const prev = logosTrack.style.scrollBehavior;
+      logosTrack.style.scrollBehavior = 'auto';
+      logosTrack.scrollLeft += delta;
+      // Restauramos el behavior en el siguiente frame
+      requestAnimationFrame(() => { logosTrack.style.scrollBehavior = prev; });
+    };
+
+    let throttle = 0;
+    logosTrack.addEventListener('scroll', () => {
+      const now = Date.now();
+      if (now - throttle < 80) return;
+      const ow = setWidth();
+      if (logosTrack.scrollLeft >= ow) {
+        throttle = now;
+        silentRewind(-ow);
+      }
+    }, { passive: true });
+
     logosNext.addEventListener('click', () => {
-      const max = logosTrack.scrollWidth - logosTrack.clientWidth;
-      if (logosTrack.scrollLeft >= max - 4) logosTrack.scrollTo({ left: 0, behavior: 'smooth' });
-      else logosTrack.scrollBy({ left: step(), behavior: 'smooth' });
+      logosTrack.scrollBy({ left: stepPx(), behavior: 'smooth' });
     });
+
     logosPrev.addEventListener('click', () => {
-      if (logosTrack.scrollLeft <= 4) logosTrack.scrollTo({ left: logosTrack.scrollWidth, behavior: 'smooth' });
-      else logosTrack.scrollBy({ left: -step(), behavior: 'smooth' });
+      // Si estamos al inicio, saltar primero al equivalente del set duplicado
+      if (logosTrack.scrollLeft <= 2) silentRewind(setWidth());
+      logosTrack.scrollBy({ left: -stepPx(), behavior: 'smooth' });
     });
   }
 
