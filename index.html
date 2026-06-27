@@ -953,13 +953,13 @@
           <span class="italic">equipo docente</span>
         </h2>
 
-        <!-- Carrusel equipo docente -->
-        <div class="max-w-5xl mx-auto" id="equipo-carousel-wrapper">
-          <div style="overflow:hidden;" id="equipo-carousel-viewport">
-            <div id="equipo-carousel-track" style="display:flex; gap:1.25rem; transition:transform 0.35s ease;">
+        <div class="relative max-w-5xl mx-auto">
+          <!-- Track del carrusel -->
+          <div id="docentes-track-wrapper" class="overflow-hidden">
+            <div id="docentes-track" class="flex gap-5 transition-transform duration-300 ease-in-out">
 
               <!-- Sergio Jiménez -->
-              <article class="bg-white rounded-2xl border border-gray-200 p-5 md:p-6 flex gap-4 md:gap-5 reveal flex-shrink-0" style="width:calc(50% - 0.625rem);">
+              <article class="bg-white rounded-2xl border border-gray-200 p-5 md:p-6 flex gap-4 md:gap-5 reveal flex-shrink-0">
                 <img src="assets/img/sergio-jimenez.jpg" alt="Sergio Jiménez" class="w-20 h-20 md:w-24 md:h-24 rounded-xl object-cover flex-shrink-0">
                 <div>
                   <h3 class="font-display text-lg md:text-xl text-ceac-blue mb-2">Sergio Jiménez</h3>
@@ -970,7 +970,7 @@
               </article>
 
               <!-- Javier Manrique -->
-              <article class="bg-white rounded-2xl border border-gray-200 p-5 md:p-6 flex gap-4 md:gap-5 reveal flex-shrink-0" style="width:calc(50% - 0.625rem);">
+              <article class="bg-white rounded-2xl border border-gray-200 p-5 md:p-6 flex gap-4 md:gap-5 reveal flex-shrink-0">
                 <div class="w-20 h-20 md:w-24 md:h-24 rounded-xl flex-shrink-0 bg-ceac-lime flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" class="w-14 h-14 md:w-16 md:h-16">
                     <circle cx="40" cy="28" r="16" fill="white" opacity="0.85"/>
@@ -987,7 +987,7 @@
               </article>
 
               <!-- Ricardo Romero -->
-              <article class="bg-white rounded-2xl border border-gray-200 p-5 md:p-6 flex gap-4 md:gap-5 reveal flex-shrink-0" style="width:calc(50% - 0.625rem);">
+              <article class="bg-white rounded-2xl border border-gray-200 p-5 md:p-6 flex gap-4 md:gap-5 reveal flex-shrink-0">
                 <div class="w-20 h-20 md:w-24 md:h-24 rounded-xl flex-shrink-0 bg-ceac-lime flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" class="w-14 h-14 md:w-16 md:h-16">
                     <circle cx="40" cy="28" r="16" fill="white" opacity="0.85"/>
@@ -1006,74 +1006,16 @@
             </div>
           </div>
 
-          <!-- Flechas navegación -->
+          <!-- Flechas de navegación -->
           <div class="flex justify-end gap-3 mt-6">
-            <button id="equipo-prev" aria-label="Anterior" class="w-10 h-10 rounded-full bg-ceac-lime text-ceac-blue flex items-center justify-center transition-opacity hover:opacity-80 disabled:opacity-30">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            <button id="docentes-prev" aria-label="Anterior" class="w-10 h-10 rounded-full bg-ceac-lime text-ceac-blue flex items-center justify-center hover:bg-ceac-limeDark transition-colors disabled:opacity-40">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
             </button>
-            <button id="equipo-next" aria-label="Siguiente" class="w-10 h-10 rounded-full bg-ceac-lime text-ceac-blue flex items-center justify-center transition-opacity hover:opacity-80 disabled:opacity-30">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            <button id="docentes-next" aria-label="Siguiente" class="w-10 h-10 rounded-full bg-ceac-lime text-ceac-blue flex items-center justify-center hover:bg-ceac-limeDark transition-colors disabled:opacity-40">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg>
             </button>
           </div>
         </div>
-
-        <script>
-          (function () {
-            var track = document.getElementById('equipo-carousel-track');
-            var viewport = document.getElementById('equipo-carousel-viewport');
-            var btnPrev = document.getElementById('equipo-prev');
-            var btnNext = document.getElementById('equipo-next');
-            var cards = track.querySelectorAll('article');
-            var current = 0;
-
-            function visibleCount() {
-              return window.innerWidth >= 768 ? 2 : 1;
-            }
-
-            function cardWidth() {
-              return cards[0].getBoundingClientRect().width + 20; /* 20 = gap 1.25rem */
-            }
-
-            function maxIndex() {
-              return Math.max(0, cards.length - visibleCount());
-            }
-
-            function setCardWidths() {
-              var vis = visibleCount();
-              var gap = 20;
-              var w = vis === 2
-                ? 'calc(50% - ' + (gap / 2) + 'px)'
-                : '100%';
-              cards.forEach(function (c) { c.style.width = w; });
-            }
-
-            function update() {
-              var offset = current * cardWidth();
-              track.style.transform = 'translateX(-' + offset + 'px)';
-              btnPrev.disabled = current === 0;
-              btnNext.disabled = current >= maxIndex();
-              btnPrev.style.opacity = current === 0 ? '0.3' : '1';
-              btnNext.style.opacity = current >= maxIndex() ? '0.3' : '1';
-            }
-
-            btnPrev.addEventListener('click', function () {
-              if (current > 0) { current--; update(); }
-            });
-
-            btnNext.addEventListener('click', function () {
-              if (current < maxIndex()) { current++; update(); }
-            });
-
-            window.addEventListener('resize', function () {
-              setCardWidths();
-              current = Math.min(current, maxIndex());
-              update();
-            });
-
-            setCardWidths();
-            update();
-          })();
-        </script>
       </div>
     </section>
 
@@ -1215,5 +1157,66 @@
   </footer>
 
   <script src="js/main.js?v=20260602b"></script>
+  <script>
+    (function () {
+      const track = document.getElementById('docentes-track');
+      const wrapper = document.getElementById('docentes-track-wrapper');
+      const btnPrev = document.getElementById('docentes-prev');
+      const btnNext = document.getElementById('docentes-next');
+      if (!track || !wrapper || !btnPrev || !btnNext) return;
+
+      let current = 0;
+
+      function getSlidesPerView() {
+        return window.innerWidth >= 768 ? 2 : 1;
+      }
+
+      function getCardWidth() {
+        const cards = track.querySelectorAll('article');
+        if (!cards.length) return 0;
+        const gap = 20;
+        const perView = getSlidesPerView();
+        return (wrapper.offsetWidth - gap * (perView - 1)) / perView;
+      }
+
+      function updateCardWidths() {
+        const cards = track.querySelectorAll('article');
+        const w = getCardWidth();
+        cards.forEach(c => {
+          c.style.minWidth = w + 'px';
+          c.style.maxWidth = w + 'px';
+        });
+      }
+
+      function updateButtons() {
+        const cards = track.querySelectorAll('article');
+        const perView = getSlidesPerView();
+        const maxIndex = Math.max(0, cards.length - perView);
+        btnPrev.disabled = current <= 0;
+        btnNext.disabled = current >= maxIndex;
+      }
+
+      function goTo(index) {
+        const cards = track.querySelectorAll('article');
+        const perView = getSlidesPerView();
+        const maxIndex = Math.max(0, cards.length - perView);
+        current = Math.max(0, Math.min(index, maxIndex));
+        const gap = 20;
+        const cardW = getCardWidth();
+        track.style.transform = 'translateX(-' + (current * (cardW + gap)) + 'px)';
+        updateButtons();
+      }
+
+      btnPrev.addEventListener('click', () => goTo(current - 1));
+      btnNext.addEventListener('click', () => goTo(current + 1));
+      window.addEventListener('resize', () => {
+        updateCardWidths();
+        goTo(current);
+      });
+
+      updateCardWidths();
+      updateButtons();
+    })();
+  </script>
 </body>
 </html>
