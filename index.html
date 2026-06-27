@@ -953,52 +953,127 @@
           <span class="italic">equipo docente</span>
         </h2>
 
-        <div class="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
-          <!-- Sergio Jiménez -->
-          <article class="bg-white rounded-2xl border border-gray-200 p-5 md:p-6 flex gap-4 md:gap-5 reveal">
-            <img src="assets/img/sergio-jimenez.jpg" alt="Sergio Jiménez" class="w-20 h-20 md:w-24 md:h-24 rounded-xl object-cover flex-shrink-0">
-            <div>
-              <h3 class="font-display text-lg md:text-xl text-ceac-blue mb-2">Sergio Jiménez</h3>
-              <p class="text-[11px] md:text-xs text-gray-700 leading-relaxed">
-                CFGS Automoción. CFGM Electromecánica, CAP. Técnico mecánico ITV.
-              </p>
-            </div>
-          </article>
+        <!-- Carrusel equipo docente -->
+        <div class="max-w-5xl mx-auto" id="equipo-carousel-wrapper">
+          <div style="overflow:hidden;" id="equipo-carousel-viewport">
+            <div id="equipo-carousel-track" style="display:flex; gap:1.25rem; transition:transform 0.35s ease;">
 
-          <!-- Javier Manrique -->
-          <article class="bg-white rounded-2xl border border-gray-200 p-5 md:p-6 flex gap-4 md:gap-5 reveal">
-            <div class="w-20 h-20 md:w-24 md:h-24 rounded-xl flex-shrink-0 bg-ceac-lime flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" class="w-14 h-14 md:w-16 md:h-16">
-                <circle cx="40" cy="28" r="16" fill="white" opacity="0.85"/>
-                <ellipse cx="40" cy="72" rx="26" ry="18" fill="white" opacity="0.85"/>
-              </svg>
-            </div>
-            <div>
-              <h3 class="font-display text-lg md:text-xl text-ceac-blue mb-2">Javier Manrique</h3>
-              <p class="text-[11px] md:text-xs text-gray-700 leading-relaxed">
-                Ingeniero Técnico Industrial especialidad Electrónica.<br><br>
-                Título de CAP (Certificado Aptitud Pedagógica). Formación en Mecánica especialidad en Electricidad del Automóvil y Sistemas de Inyección diésel y gasolina. Experiencia profesional en Taller Mecánico. Profesor de Bachillerato de Electrónica y profesor online en CFGM Electromecánica de Vehículos y Carrocería.
-              </p>
-            </div>
-          </article>
+              <!-- Sergio Jiménez -->
+              <article class="bg-white rounded-2xl border border-gray-200 p-5 md:p-6 flex gap-4 md:gap-5 reveal flex-shrink-0" style="width:calc(50% - 0.625rem);">
+                <img src="assets/img/sergio-jimenez.jpg" alt="Sergio Jiménez" class="w-20 h-20 md:w-24 md:h-24 rounded-xl object-cover flex-shrink-0">
+                <div>
+                  <h3 class="font-display text-lg md:text-xl text-ceac-blue mb-2">Sergio Jiménez</h3>
+                  <p class="text-[11px] md:text-xs text-gray-700 leading-relaxed">
+                    CFGS Automoción. CFGM Electromecánica, CAP. Técnico mecánico ITV.
+                  </p>
+                </div>
+              </article>
 
-          <!-- Ricardo Romero -->
-          <article class="bg-white rounded-2xl border border-gray-200 p-5 md:p-6 flex gap-4 md:gap-5 reveal">
-            <div class="w-20 h-20 md:w-24 md:h-24 rounded-xl flex-shrink-0 bg-ceac-lime flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" class="w-14 h-14 md:w-16 md:h-16">
-                <circle cx="40" cy="28" r="16" fill="white" opacity="0.85"/>
-                <ellipse cx="40" cy="72" rx="26" ry="18" fill="white" opacity="0.85"/>
-              </svg>
+              <!-- Javier Manrique -->
+              <article class="bg-white rounded-2xl border border-gray-200 p-5 md:p-6 flex gap-4 md:gap-5 reveal flex-shrink-0" style="width:calc(50% - 0.625rem);">
+                <div class="w-20 h-20 md:w-24 md:h-24 rounded-xl flex-shrink-0 bg-ceac-lime flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" class="w-14 h-14 md:w-16 md:h-16">
+                    <circle cx="40" cy="28" r="16" fill="white" opacity="0.85"/>
+                    <ellipse cx="40" cy="72" rx="26" ry="18" fill="white" opacity="0.85"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-display text-lg md:text-xl text-ceac-blue mb-2">Javier Manrique</h3>
+                  <p class="text-[11px] md:text-xs text-gray-700 leading-relaxed">
+                    Ingeniero Técnico Industrial especialidad Electrónica.<br><br>
+                    Título de CAP (Certificado Aptitud Pedagógica). Formación en Mecánica especialidad en Electricidad del Automóvil y Sistemas de Inyección diésel y gasolina. Experiencia profesional en Taller Mecánico. Profesor de Bachillerato de Electrónica y profesor online en CFGM Electromecánica de Vehículos y Carrocería.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Ricardo Romero -->
+              <article class="bg-white rounded-2xl border border-gray-200 p-5 md:p-6 flex gap-4 md:gap-5 reveal flex-shrink-0" style="width:calc(50% - 0.625rem);">
+                <div class="w-20 h-20 md:w-24 md:h-24 rounded-xl flex-shrink-0 bg-ceac-lime flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" class="w-14 h-14 md:w-16 md:h-16">
+                    <circle cx="40" cy="28" r="16" fill="white" opacity="0.85"/>
+                    <ellipse cx="40" cy="72" rx="26" ry="18" fill="white" opacity="0.85"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-display text-lg md:text-xl text-ceac-blue mb-2">Ricardo Romero</h3>
+                  <p class="text-[11px] md:text-xs text-gray-700 leading-relaxed">
+                    Ingeniero Técnico Industrial especialidad Mecánica.<br><br>
+                    Técnico Superior en Electromecánica de Vehículos. Técnico en Reparación y Mantenimiento de Sistemas Informáticos. Profesor online Electromecánica de Vehículos y Carrocería. Redactor de contenidos para Blog de Mecánica.
+                  </p>
+                </div>
+              </article>
+
             </div>
-            <div>
-              <h3 class="font-display text-lg md:text-xl text-ceac-blue mb-2">Ricardo Romero</h3>
-              <p class="text-[11px] md:text-xs text-gray-700 leading-relaxed">
-                Ingeniero Técnico Industrial especialidad Mecánica.<br><br>
-                Técnico Superior en Electromecánica de Vehículos. Técnico en Reparación y Mantenimiento de Sistemas Informáticos. Profesor online Electromecánica de Vehículos y Carrocería. Redactor de contenidos para Blog de Mecánica.
-              </p>
-            </div>
-          </article>
+          </div>
+
+          <!-- Flechas navegación -->
+          <div class="flex justify-end gap-3 mt-6">
+            <button id="equipo-prev" aria-label="Anterior" class="w-10 h-10 rounded-full bg-ceac-lime text-ceac-blue flex items-center justify-center transition-opacity hover:opacity-80 disabled:opacity-30">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button id="equipo-next" aria-label="Siguiente" class="w-10 h-10 rounded-full bg-ceac-lime text-ceac-blue flex items-center justify-center transition-opacity hover:opacity-80 disabled:opacity-30">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
         </div>
+
+        <script>
+          (function () {
+            var track = document.getElementById('equipo-carousel-track');
+            var viewport = document.getElementById('equipo-carousel-viewport');
+            var btnPrev = document.getElementById('equipo-prev');
+            var btnNext = document.getElementById('equipo-next');
+            var cards = track.querySelectorAll('article');
+            var current = 0;
+
+            function visibleCount() {
+              return window.innerWidth >= 768 ? 2 : 1;
+            }
+
+            function cardWidth() {
+              return cards[0].getBoundingClientRect().width + 20; /* 20 = gap 1.25rem */
+            }
+
+            function maxIndex() {
+              return Math.max(0, cards.length - visibleCount());
+            }
+
+            function setCardWidths() {
+              var vis = visibleCount();
+              var gap = 20;
+              var w = vis === 2
+                ? 'calc(50% - ' + (gap / 2) + 'px)'
+                : '100%';
+              cards.forEach(function (c) { c.style.width = w; });
+            }
+
+            function update() {
+              var offset = current * cardWidth();
+              track.style.transform = 'translateX(-' + offset + 'px)';
+              btnPrev.disabled = current === 0;
+              btnNext.disabled = current >= maxIndex();
+              btnPrev.style.opacity = current === 0 ? '0.3' : '1';
+              btnNext.style.opacity = current >= maxIndex() ? '0.3' : '1';
+            }
+
+            btnPrev.addEventListener('click', function () {
+              if (current > 0) { current--; update(); }
+            });
+
+            btnNext.addEventListener('click', function () {
+              if (current < maxIndex()) { current++; update(); }
+            });
+
+            window.addEventListener('resize', function () {
+              setCardWidths();
+              current = Math.min(current, maxIndex());
+              update();
+            });
+
+            setCardWidths();
+            update();
+          })();
+        </script>
       </div>
     </section>
 
